@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* start main title*/
+.main-title {
+    padding: 10px 20px;
+    font-size: 28px;
+    color: black;
+    background-color: white;
+    border: solid 2px black;
+    width: fit-content;
+    /*text-align: center;*/
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+  }
+  .main-title:hover {
+    color: white;
+    
+  }
+  .main-title::before {
+    content: "";
+    position: absolute;
+    background-color: #2196f3;
+    width: 20px;
+    height: 20px;
+    left: -25px;
+    top: 50%;
+    border-radius: 100%;
+    transform: translateY(-50%);
+  }
+  .main-title::after {
+    content: "";
+    position: absolute;
+    background-color: #2196f3;
+    width: 20px;
+    height: 20px;
+    right: -25px;
+    top: 50%;
+    border-radius: 100%;
+    transform: translateY(-50%);
+  }
+  .main-title:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+  }
+  .main-title:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+  }
+  /*end main title*/
+.header{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 300px;
+    height:100%;
+    border-radius:8px;
+    background-color: rgb(113, 83, 125);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width:250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.header .first{
+    display: flex;
+    flex-direction: column;
+     gap: 5px;
+     margin: 10px;
+}
+.header label{
+    margin-right:140px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.header button{
+    width: 100px;
+    height: 40px;
+    padding:10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(113, 83, 125);
+    background-color: white;
+    transition: 0.5s;
+    border-radius:8px;
+}
+.header button:hover{
+    background-color: blueviolet;
+    letter-spacing: 2px;
+    color: white;
+}
+@keyframes left-move {
+    50% {
+      left: 0;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 0;
+      border-radius: 0%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  @keyframes right-move {
+    50% {
+      right: 0;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 0;
+      border-radius: 0%;
+      width: 51%;
+      height: 100%;
+    }
+  }
